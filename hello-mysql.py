@@ -16,4 +16,9 @@ mysql.init_app(app)
 def hello():
 	cursor = mysql.get_db().cursor()
 	
-	return 'Hello World!'
+	# test sql statement
+	sql = 'SELECT * FROM authors'
+	cursor.execute(sql)
+	data=cursor.fetchall()
+	
+	return data
