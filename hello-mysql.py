@@ -21,4 +21,6 @@ def hello():
 	cursor.execute(sql)
 	data=cursor.fetchall()
 	
-	return data
+	print(data)
+	
+	return "Hello MySQL!"
