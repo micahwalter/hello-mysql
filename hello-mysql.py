@@ -17,10 +17,15 @@ def hello():
 	cursor = mysql.get_db().cursor()
 	
 	# test sql statement
-	sql = 'SELECT * FROM authors'
+	sql = 'SELECT * FROM authors LIMIT 1'
 	cursor.execute(sql)
 	data=cursor.fetchall()
 	
-	print(data)
+	for f in data :
+		theID = f[0]
+		theName = f[1]
+		theEmail = f[2]
 	
-	return "Hello MySQL!"
+	html = str(theID) + ", " + theName + ", " + theEmail
+	
+	return html
